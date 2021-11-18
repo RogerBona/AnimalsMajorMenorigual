@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/correct"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="400dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+        app:srcCompat="@drawable/correct" />
+
+    <ImageView
+        android:id="@+id/incorrect"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="400dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+        app:srcCompat="@drawable/incorrect" />
+
+    <ImageButton
+        android:id="@+id/IBmajor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="150dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+        app:layout_constraintVertical_bias="0.16"
+        app:srcCompat="@drawable/major" />
+
+    <ImageButton
+        android:id="@+id/IBmenor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+        app:layout_constraintVertical_bias="0.16"
+        app:srcCompat="@drawable/menor" />
+
+    <ImageButton
+        android:id="@+id/IBigual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+        app:layout_constraintVertical_bias="0.16"
+        app:srcCompat="@drawable/igual" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="107dp">
+
+
+        <ImageView
+            android:id="@+id/Elefant1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            app:srcCompat="@drawable/elefant" />
+
+        <ImageView
+            android:id="@+id/Elefant2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="200dp"
+            android:layout_toRightOf="@id/Elefant1"
+            app:srcCompat="@drawable/elefant" />
+
+        <ImageView
+            android:id="@+id/Elefant3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="200dp"
+            android:layout_toRightOf="@id/Elefant2"
+            app:srcCompat="@drawable/elefant" />
+
+        <ImageView
+            android:id="@+id/Elefant4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Elefant1"
+            android:layout_marginTop="15dp"
+            app:srcCompat="@drawable/elefant" />
+
+        <ImageView
+            android:id="@+id/Elefant5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Elefant2"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/Elefant4"
+            app:srcCompat="@drawable/elefant" />
+
+        <ImageView
+            android:id="@+id/Elefant6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Elefant3"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/Elefant5"
+            app:srcCompat="@drawable/elefant" />
+
+        <ImageView
+            android:id="@+id/Centra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="250dp"
+            android:layout_toRightOf="@id/Elefant3"
+            app:srcCompat="@drawable/base" />
+
+        <ImageView
+            android:id="@+id/Lleo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="200dp"
+            app:srcCompat="@drawable/lleo" />
+
+        <ImageView
+            android:id="@+id/Lleo2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@id/Lleo1"
+            app:srcCompat="@drawable/lleo" />
+
+        <ImageView
+            android:id="@+id/Lleo3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@id/Lleo2"
+            app:srcCompat="@drawable/lleo" />
+
+        <ImageView
+            android:id="@+id/Lleo4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Lleo1"
+
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5dp"
+            app:srcCompat="@drawable/lleo" />
+
+        <ImageView
+            android:id="@+id/Lleo5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Elefant2"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@id/Lleo4"
+            app:srcCompat="@drawable/lleo" />
+
+        <ImageView
+            android:id="@+id/Lleo6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Elefant3"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@id/Lleo5"
+            app:srcCompat="@drawable/lleo" />
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
