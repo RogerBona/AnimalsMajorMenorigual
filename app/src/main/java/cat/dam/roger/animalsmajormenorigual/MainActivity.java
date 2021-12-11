@@ -1,11 +1,13 @@
 package cat.dam.roger.animalsmajormenorigual;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -20,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
 
     static ImageView correct;
     static ImageView incorrect;
+    static TextView Contador;
+    static int resultat;
 
     @SuppressLint("WrongConstant")
     @Override
@@ -33,22 +37,22 @@ public class MainActivity extends AppCompatActivity {
 
         //Creem l'arraylist
         ArrayList<ImageView> Elefants = new ArrayList<>();
-        Elefants.add((ImageView) findViewById(R.id.Elefant1));
-        Elefants.add((ImageView) findViewById(R.id.Elefant2));
-        Elefants.add((ImageView) findViewById(R.id.Elefant3));
-        Elefants.add((ImageView) findViewById(R.id.Elefant4));
-        Elefants.add((ImageView) findViewById(R.id.Elefant5));
-        Elefants.add((ImageView) findViewById(R.id.Elefant6));
+        Elefants.add((ImageView) findViewById(R.id.elefant));
+        Elefants.add((ImageView) findViewById(R.id.elefant2));
+        Elefants.add((ImageView) findViewById(R.id.elefant3));
+        Elefants.add((ImageView) findViewById(R.id.elefant4));
+        Elefants.add((ImageView) findViewById(R.id.elefant5));
+        Elefants.add((ImageView) findViewById(R.id.elefant6));
 
         ArrayList<ImageView> Lleons = new ArrayList<>();
-        Lleons.add((ImageView) findViewById(R.id.Lleo1));
-        Lleons.add((ImageView) findViewById(R.id.Lleo2));
-        Lleons.add((ImageView) findViewById(R.id.Lleo3));
-        Lleons.add((ImageView) findViewById(R.id.Lleo4));
-        Lleons.add((ImageView) findViewById(R.id.Lleo5));
-        Lleons.add((ImageView) findViewById(R.id.Lleo6));
+        Lleons.add((ImageView) findViewById(R.id.lleo));
+        Lleons.add((ImageView) findViewById(R.id.lleo2));
+        Lleons.add((ImageView) findViewById(R.id.lleo3));
+        Lleons.add((ImageView) findViewById(R.id.lleo4));
+        Lleons.add((ImageView) findViewById(R.id.lleo5));
+        Lleons.add((ImageView) findViewById(R.id.lleo6));
 
-
+        Contador = (TextView)findViewById(R.id.Contador);
         //Aqui girem l'arraylist per fer invisibles primer els ultims animals
         Collections.reverse(Elefants);
         Collections.reverse(Lleons);
@@ -58,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         final ImageButton IBmajor = (ImageButton)findViewById(R.id.IBmajor);
         final ImageButton IBmenor = (ImageButton)findViewById(R.id.IBmenor);
         final ImageButton IBigual = (ImageButton)findViewById(R.id.IBigual);
-        final ImageView Centra = (ImageView)findViewById(R.id.Centra);
+        final ImageView Centra = (ImageView)findViewById(R.id.centra);
 
 
         //Aqui es posa en una variable la funcio random
@@ -80,12 +84,16 @@ public class MainActivity extends AppCompatActivity {
                 //Si elefants es mes gran que lleo es mostrara imatge correcta sino es mostrara imatge incorrecta
                 if(elefants[0] < lleons[0]){
                     System.out.println("Ha entrat correctament");
-                    incorrect.setVisibility(-1);
-                    correct.setVisibility(0);
+                    incorrect.setVisibility(View.GONE);
+                    correct.setVisibility(View.VISIBLE);
+                    resultat ++;
+                    Contador.setText("PUNTUACIO: " + String.valueOf(resultat));
 
                 }else{
-                    correct.setVisibility(-1);
-                    incorrect.setVisibility(0);
+                    correct.setVisibility(View.GONE);
+                    incorrect.setVisibility(View.VISIBLE);
+                    resultat --;
+                    Contador.setText("PUNTUACIO: " + String.valueOf(resultat));
                 }
 
                 //Aqui esperara 1,5 segons per tornar a iniciar el programa
@@ -114,13 +122,16 @@ public class MainActivity extends AppCompatActivity {
 
                 //Si elefants es mes petit que lleo es mostrara imatge correcta sino es mostrara imatge incorrecta
                 if(elefants[0] > lleons[0]){
-                    incorrect.setVisibility(-1);
-                    correct.setVisibility(0);
+                    incorrect.setVisibility(View.GONE);
+                    correct.setVisibility(View.VISIBLE);
+                    resultat ++;
+                    Contador.setText("PUNTUACIO: " + String.valueOf(resultat));
 
                 }else{
-                    correct.setVisibility(-1);
-                    incorrect.setVisibility(0);
-
+                    correct.setVisibility(View.GONE);
+                    incorrect.setVisibility(View.VISIBLE);
+                    resultat --;
+                    Contador.setText("PUNTUACIO: " + String.valueOf(resultat));
                 }
 
                 //Aqui esperara 1,5 segons per tornar a iniciar el programa
@@ -149,12 +160,16 @@ public class MainActivity extends AppCompatActivity {
 
                 //Si elefants es igual que lleo es mostrara imatge correcta sino es mostrara imatge incorrecta
                 if(elefants[0] == lleons[0]){
-                    incorrect.setVisibility(-1);
-                    correct.setVisibility(0);
+                    incorrect.setVisibility(View.GONE);
+                    correct.setVisibility(View.VISIBLE);
+                    resultat ++;
+                    Contador.setText("PUNTUACIO: " + String.valueOf(resultat));
 
                 }else{
-                    correct.setVisibility(-1);
-                    incorrect.setVisibility(0);
+                    correct.setVisibility(View.GONE);
+                    incorrect.setVisibility(View.VISIBLE);
+                    resultat --;
+                    Contador.setText("PUNTUACIO: " + String.valueOf(resultat));
                 }
 
                 //Aqui esperara 1,5 segons per tornar a iniciar el programa
@@ -183,7 +198,6 @@ public class MainActivity extends AppCompatActivity {
         return lleons;
     }
 
-
     @SuppressLint("WrongConstant")
     public void playgame(int elefants, int lleons, ArrayList<ImageView>Elefants, ArrayList<ImageView>Lleons, ImageView correct, ImageView incorrect, ImageView Centra){
 
@@ -192,8 +206,8 @@ public class MainActivity extends AppCompatActivity {
         Drawable imatge = null;
         imatge = getDrawable(R.drawable.base);
         Centra.setImageDrawable(imatge);
-        correct.setVisibility(-1);
-        incorrect.setVisibility(-1);
+        correct.setVisibility(View.GONE);
+        incorrect.setVisibility(View.GONE);
 
         //Aqui mostrara el numero d'elefants i lleons que sortirant per pantalla
 
